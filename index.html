@@ -26,6 +26,27 @@
             transform-origin: bottom;
         }
 
+        /* Live coding background styles */
+        #coding-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Puts it behind everything */
+            background-color: #0d1117; /* Dark background similar to a code editor */
+            overflow: hidden;
+            opacity: 0.15; /* Subtle effect */
+        }
+        #code-output {
+            font-family: 'Courier New', Courier, monospace;
+            color: #58a6ff;
+            font-size: 14px;
+            white-space: pre; /* Use pre to respect spaces and newlines from the string */
+            margin: 1rem;
+            line-height: 1.5;
+        }
+
         /* Custom styles for portfolio section */
         .portfolio-grid {
             display: grid;
@@ -110,6 +131,10 @@
     </style>
 </head>
 <body>
+    <div id="coding-background">
+        <pre id="code-output"></pre>
+    </div>
+
     <div data-animation="default" class="navbar w-nav" data-easing2="ease-in-quart" data-easing="ease-out-quart" data-collapse="medium" data-w-id="b81427ad-7a6f-ef7c-61ac-ed954329f2b6" role="banner" data-duration="400">
         <div class="navbar-container">
             <a href="#home" class="brand w-nav-brand">
@@ -365,6 +390,68 @@
 
             // Avoid flash of unstyled content
             gsap.set("[text-split]", { opacity: 1 });
+
+            // --- Live Coding Background Script ---
+            const codeSnippets = [
+`function initializeApp() {
+    console.log("Initializing Spark...");
+    loadServices();
+    setupEventListeners();
+}`,
+`const sparkButton = document.querySelector('.spark-btn');
+sparkButton.addEventListener('click', () => {
+    createMagic();
+});`,
+`.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #85efac, #58a6ff);
+}`,
+`// Fetching data from an API
+async function getData(url) {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+}`
+            ];
+
+            let currentSnippetIndex = 0;
+            let currentCharIndex = 0;
+            const codeOutput = document.getElementById('code-output');
+            let timeoutId;
+
+            function typeCode() {
+                if (!codeOutput) return; // Exit if element not found
+
+                if (currentSnippetIndex >= codeSnippets.length) {
+                    currentSnippetIndex = 0; // Loop back to the start
+                }
+
+                let currentSnippet = codeSnippets[currentSnippetIndex];
+
+                if (currentCharIndex < currentSnippet.length) {
+                    codeOutput.textContent += currentSnippet.charAt(currentCharIndex);
+                    currentCharIndex++;
+                    timeoutId = setTimeout(typeCode, 40); // Adjust typing speed here
+                } else {
+                    // Wait a bit then clear and move to the next snippet
+                    timeoutId = setTimeout(() => {
+                        currentCharIndex = 0;
+                        currentSnippetIndex++;
+                        codeOutput.textContent = ''; // Clear for the next snippet
+                        typeCode();
+                    }, 2500); // Wait 2.5 seconds before typing the next snippet
+                }
+            }
+
+            // Start the animation
+            typeCode();
         });
     </script>
 </body>

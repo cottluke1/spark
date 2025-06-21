@@ -116,6 +116,7 @@
                 <h3 class="logo-text">Spark</h3>
             </a>
             <nav role="navigation" class="nav-menu w-nav-menu">
+                <a href="#mission" class="nav-link w-inline-block"><div>Our Mission</div></a>
                 <a href="#services" class="nav-link w-inline-block"><div>Services</div></a>
                 <a href="#portfolio" class="nav-link w-inline-block"><div>Demo Sites</div></a>
                 <a href="#pricing" class="nav-link w-inline-block"><div>Pricing</div></a>
@@ -146,6 +147,17 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <img src="https://placehold.co/2000x1200/111111/333333?text=Your+Future+Website" loading="eager" data-w-id="1f835257-e8f1-bb68-c813-ad3439d9a00d" alt="A modern website design" class="hero-image">
+                </div>
+            </div>
+        </div>
+        
+        <div id="mission" class="section inverse wf-section">
+            <div class="wrapper">
+                <div class="block">
+                    <div class="center-items">
+                        <div class="heading-jumbo small">Our Mission</div>
+                        <p class="paragraph-big">I am a student from The Woodlands, Texas. I am donating a portion of proceeds to charity.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -267,28 +279,6 @@
             </div>
         </div>
 
-        <div class="section footer-cta wf-section">
-            <div class="wrapper">
-                <div class="headline">
-                    <div letters-slide-up="" text-split="" class="heading-jumbo">
-                       Ready to start your project?
-                    </div>
-                    <p class="paragraph-big">Let's build something amazing together.</p>
-                </div>
-                <div class="w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form inline" aria-label="Email Form">
-                        <input type="email" class="text-field inline inverse w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Enter your e-mail" id="email-2" required="">
-                        <input type="submit" value="Get Started" data-wait="Please wait..." class="button inline w-button">
-                    </form>
-                    <div class="w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
-                        <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="section footer wf-section">
             <div class="wrapper">
                 <div class="block flex vertical">
@@ -296,6 +286,7 @@
                         <h3 class="logo-text inverse">Spark</h3>
                     </a>
                     <div class="footer-links">
+                        <a href="#mission" class="footer-link w-inline-block"><div>Our Mission</div></a>
                         <a href="#services" class="footer-link w-inline-block"><div>Services</div></a>
                         <a href="#portfolio" class="footer-link w-inline-block"><div>Demo Sites</div></a>
                         <a href="#pricing" class="footer-link w-inline-block"><div>Pricing</div></a>
@@ -371,8 +362,6 @@
                 tl.from(el.querySelectorAll(".char"), { opacity: 0, duration: 0.4, ease: "power1.out", stagger: { amount: 0.4 } });
                 createScrollTrigger(el, tl);
             });
-
-            // FAQ Accordion Logic is removed as the section is no longer present
 
             // Avoid flash of unstyled content
             gsap.set("[text-split]", { opacity: 1 });

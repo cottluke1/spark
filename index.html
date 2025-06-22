@@ -40,12 +40,33 @@
         }
         #code-output {
             font-family: 'Courier New', Courier, monospace;
-            color: #58a6ff;
+            color: #c9d1d9; /* Default text color */
             font-size: 18px; /* Increased font size */
-            white-space: pre;
+            white-space: pre-wrap;
+            word-wrap: break-word;
             margin: 1rem;
             line-height: 1.5;
+            /* Allow vertical scrolling but hide the scrollbar */
+            overflow-y: auto;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
         }
+        #code-output::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        /* Syntax highlighting styles */
+        .code-tag { color: #7ee787; }
+        .code-attr-name { color: #79c0ff; }
+        .code-attr-value { color: #a5d6ff; }
+        .code-js-keyword { color: #ff7b72; }
+        .code-js-variable { color: #ffa657; }
+        .code-js-function { color: #d2a8ff; }
+        .code-js-string { color: #a5d6ff; }
+        .code-css-selector { color: #d2a8ff; }
+        .code-css-property { color: #79c0ff; }
+        .code-css-value { color: #ffa657; }
+        .code-comment { color: #8b949e; }
+        
 
         /* Custom styles for portfolio section */
         .portfolio-grid-wrapper {
@@ -155,14 +176,9 @@
             margin-top: 4rem;
         }
         .custom-plan-cta a {
-            color: #85efac;
+            color: #000000; /* Text color set to black */
             text-decoration: none;
             font-weight: bold;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-        .custom-plan-cta a:hover {
-            border-color: #85efac;
         }
 
         /* Modern Contact Form Styles */
@@ -190,6 +206,14 @@
         @media (max-width: 767px) {
             .pricing-grid {
                 grid-template-columns: 1fr;
+            }
+            /* Style to stack contact form elements on mobile */
+            .contact-section .wrapper.flex {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .contact-section .half-block {
+                width: 100%;
             }
         }
     </style>
@@ -319,56 +343,56 @@
                 <div class="portfolio-grid-wrapper">
                     <div class="portfolio-grid">
                         <a href="https://cottluke1.github.io/spark1/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/Demo1.png?raw=true" alt="Demo 1" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/Demo1.png?raw=true" alt="Demo 1" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+1';">
                             <div class="portfolio-content">
                                 <h3>Demo 1</h3>
                                 <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark2/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/demo2.png?raw=true" alt="Demo 2" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo2.png?raw=true" alt="Demo 2" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+2';">
                             <div class="portfolio-content">
                                 <h3>Demo 2</h3>
                                 <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark3/" target="_blank" class="portfolio-item">
-                             <img src="https://github.com/cottluke1/images/blob/main/demo3.png?raw=true" alt="Demo 3" class="portfolio-image">
+                             <img src="https://github.com/cottluke1/images/blob/main/demo3.png?raw=true" alt="Demo 3" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+3';">
                             <div class="portfolio-content">
                                 <h3>Demo 3</h3>
                                 <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark4/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/demo4.png?raw=true" alt="Demo 4" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo4.png?raw=true" alt="Demo 4" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+4';">
                             <div class="portfolio-content">
                                <h3>Demo 4</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark5/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/demo5.png?raw=true" alt="Demo 5" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo5.png?raw=true" alt="Demo 5" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+5';">
                             <div class="portfolio-content">
                                <h3>Demo 5</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark6/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/demo6.png?raw=true" alt="Demo 6" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo6.png?raw=true" alt="Demo 6" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+6';">
                             <div class="portfolio-content">
                                <h3>Demo 6</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark7/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/demo7.png?raw=true" alt="Demo 7" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo7.png?raw=true" alt="Demo 7" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+7';">
                             <div class="portfolio-content">
                                <h3>Demo 7</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark8/" target="_blank" class="portfolio-item">
-                            <img src="https://github.com/cottluke1/images/blob/main/demo8.png?raw=true" alt="Demo 8" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo8.png?raw=true" alt="Demo 8" class="portfolio-image" onerror="this.onerror=null;this.src='https://placehold.co/300x220/1a1a1a/ffffff?text=Demo+8';">
                             <div class="portfolio-content">
                                <h3>Demo 8</h3>
                                <p>A preview of a custom-designed website.</p>
@@ -399,7 +423,7 @@
                             <li>Secure Hosting</li>
                             <li>Domain: spark.github.io/yourname</li>
                         </ul>
-                        <a href="#contact" class="button inverse w-button">Get Started</a>
+                        <a href="#contact" class="button inverse w-button">Contact</a>
                     </div>
                     <!-- Advanced Plan -->
                     <div class="pricing-card">
@@ -412,7 +436,7 @@
                             <li>Secure Hosting</li>
                             <li>Live Updates & Listings</li>
                         </ul>
-                        <a href="#contact" class="button inverse w-button">Choose Plan</a>
+                        <a href="#contact" class="button inverse w-button">Contact</a>
                     </div>
                     <!-- Professional Plan -->
                     <div class="pricing-card professional">
@@ -426,7 +450,7 @@
                             <li>Domain: yourname.com</li>
                             <li>Live Listings & Updates</li>
                         </ul>
-                        <a href="#contact" class="button inverse w-button">Go Professional</a>
+                        <a href="#contact" class="button inverse w-button">Contact</a>
                     </div>
                 </div>
                 <div class="custom-plan-cta">
@@ -441,6 +465,7 @@
                 <div class="half-block">
                     <div class="heading-jumbo small left">Contact Us</div>
                     <p class="paragraph-big max-width">Message us for all inquiries, and we'll get back to you as quickly as possible.</p>
+                    <p class="paragraph-big max-width" style="margin-top: 1.5rem; font-size: 1.1rem;">To place an order, please email us directly at <a href="mailto:order@spark.com" style="color: #000000; text-decoration: underline;">order@spark.com</a>.</p>
                 </div>
                 <div class="half-block">
                     <div class="form-block">
@@ -467,17 +492,9 @@
         <div class="section footer wf-section">
             <div class="wrapper">
                 <div class="block flex vertical">
-                    <a href="#home" class="brand footer-brand w-nav-brand">
+                     <a href="#home" class="brand footer-brand w-nav-brand">
                         <h3 class="logo-text inverse">Spark</h3>
                     </a>
-                    <div class="footer-links">
-                        <a href="#mission" class="footer-link w-inline-block"><div>Our Mission</div></a>
-                        <a href="#services" class="footer-link w-inline-block"><div>Services</div></a>
-                        <a href="#process" class="footer-link w-inline-block"><div>Our Process</div></a>
-                        <a href="#portfolio" class="footer-link w-inline-block"><div>Demo Sites</div></a>
-                        <a href="#pricing" class="footer-link w-inline-block"><div>Pricing</div></a>
-                        <a href="#contact" class="footer-link w-inline-block"><div>Contact</div></a>
-                    </div>
                 </div>
                 <div class="block flex vertical">
                     <div class="half-block flex center">
@@ -552,66 +569,133 @@
             // Avoid flash of unstyled content
             gsap.set("[text-split]", { opacity: 1 });
 
-            // --- Live Coding Background Script ---
+            // --- Live Coding Background Script with Syntax Highlighting ---
             const codeSnippets = [
-`function initializeApp() {
-    console.log("Initializing Spark...");
-    loadServices();
-    setupEventListeners();
-}`,
-`const sparkButton = document.querySelector('.spark-btn');
-sparkButton.addEventListener('click', () => {
-    createMagic();
-});`,
-`.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #85efac, #58a6ff);
-}`,
-`// Fetching data from an API
-async function getData(url) {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Fetch error:', error);
-    }
-}`
+                // JS Snippet
+                [
+                    { text: 'function ', className: 'code-js-keyword' },
+                    { text: 'initializeApp', className: 'code-js-function' },
+                    { text: '() {\n' },
+                    { text: '    // Initialize the main application\n', className: 'code-comment' },
+                    { text: '    ', className: '' },
+                    { text: 'console', className: 'code-js-variable' },
+                    { text: '.', className: '' },
+                    { text: 'log', className: 'code-js-function' },
+                    { text: '(', className: '' },
+                    { text: "'Initializing Spark...'", className: 'code-js-string' },
+                    { text: ');\n' },
+                    { text: '    ', className: '' },
+                    { text: 'setupEventListeners', className: 'code-js-function' },
+                    { text: '();\n}' }
+                ],
+                // CSS Snippet
+                [
+                    { text: '.hero-section ', className: 'code-css-selector' },
+                    { text: '{\n' },
+                    { text: '    display', className: 'code-css-property' },
+                    { text: ': ', className: '' },
+                    { text: 'flex', className: 'code-css-value' },
+                    { text: ';\n' },
+                    { text: '    align-items', className: 'code-css-property' },
+                    { text: ': ', className: '' },
+                    { text: 'center', className: 'code-css-value' },
+                    { text: ';\n' },
+                    { text: '    background', className: 'code-css-property' },
+                    { text: ': ', className: '' },
+                    { text: 'linear-gradient(45deg, #85efac, #58a6ff)', className: 'code-css-value' },
+                    { text: ';\n}' }
+                ],
+                // HTML Snippet
+                [
+                    { text: '<!-- Main hero banner -->\n', className: 'code-comment' },
+                    { text: '<', className: '' },
+                    { text: 'div ', className: 'code-tag' },
+                    { text: 'class=', className: 'code-attr-name' },
+                    { text: '"hero-banner"', className: 'code-attr-value' },
+                    { text: '>\n', className: '' },
+                    { text: '    <', className: '' },
+                    { text: 'h1', className: 'code-tag' },
+                    { text: '>Welcome to Spark</', className: '' },
+                    { text: 'h1', className: 'code-tag' },
+                    { text: '>\n', className: '' },
+                    { text: '</', className: '' },
+                    { text: 'div', className: 'code-tag' },
+                    { text: '>', className: '' }
+                ],
+                 // React/JSX Snippet
+                [
+                    { text: 'import ', className: 'code-js-keyword' },
+                    { text: 'React ', className: 'code-js-variable' },
+                    { text: 'from ', className: 'code-js-keyword' },
+                    { text: "'react'", className: 'code-js-string' },
+                    { text: ';\n\n' },
+                    { text: 'const ', className: 'code-js-keyword' },
+                    { text: 'Hero ', className: 'code-js-variable' },
+                    { text: '= () ', className: '' },
+                    { text: '=> ', className: 'code-js-keyword' },
+                    { text: '(\n  <', className: '' },
+                    { text: 'div ', className: 'code-tag' },
+                    { text: 'className=', className: 'code-attr-name' },
+                    { text: '"hero"', className: 'code-attr-value' },
+                    { text: '>\n    <', className: '' },
+                    { text: 'h1', className: 'code-tag' },
+                    { text: '>Spark</', className: '' },
+                    { text: 'h1', className: 'code-tag' },
+                    { text: '>\n  </', className: '' },
+                    { text: 'div', className: 'code-tag' },
+                    { text: '>\n);\n\n' },
+                    { text: 'export default ', className: 'code-js-keyword' },
+                    { text: 'Hero', className: 'code-js-variable' },
+                    { text: ';', className: '' },
+                ]
             ];
 
-            let currentSnippetIndex = 0;
-            let currentCharIndex = 0;
             const codeOutput = document.getElementById('code-output');
-            let timeoutId;
+            let snippetIndex = 0;
+            let partIndex = 0;
+            let charIndex = 0;
 
             function typeCode() {
-                if (!codeOutput) return; // Exit if element not found
+                if (!codeOutput) return;
 
-                if (currentSnippetIndex >= codeSnippets.length) {
-                    currentSnippetIndex = 0; // Loop back to the start
+                if (codeOutput.textContent.length > 8000) {
+                    codeOutput.innerHTML = '';
                 }
 
-                let currentSnippet = codeSnippets[currentSnippetIndex];
+                if (snippetIndex >= codeSnippets.length) {
+                    snippetIndex = 0;
+                }
 
-                if (currentCharIndex < currentSnippet.length) {
-                    codeOutput.textContent += currentSnippet.charAt(currentCharIndex);
-                    currentCharIndex++;
-                    timeoutId = setTimeout(typeCode, 15); // Increased typing speed
+                const currentSnippet = codeSnippets[snippetIndex];
+                
+                if (partIndex >= currentSnippet.length) {
+                    partIndex = 0;
+                    snippetIndex++;
+                    codeOutput.innerHTML += '\n\n';
+                    setTimeout(typeCode, 50);
+                    return;
+                }
+                
+                const currentPart = currentSnippet[partIndex];
+
+                if (charIndex < currentPart.text.length) {
+                    const span = document.createElement('span');
+                    if (currentPart.className) {
+                        span.className = currentPart.className;
+                    }
+                    span.textContent = currentPart.text.charAt(charIndex);
+                    codeOutput.appendChild(span);
+                    
+                    charIndex++;
+                    codeOutput.scrollTop = codeOutput.scrollHeight;
+                    setTimeout(typeCode, 10);
                 } else {
-                    // Wait a bit then clear and move to the next snippet
-                    timeoutId = setTimeout(() => {
-                        currentCharIndex = 0;
-                        currentSnippetIndex++;
-                        codeOutput.textContent = ''; // Clear for the next snippet
-                        typeCode();
-                    }, 2500);
+                    charIndex = 0;
+                    partIndex++;
+                    typeCode();
                 }
             }
 
-            // Start the animation
             typeCode();
         });
     </script>

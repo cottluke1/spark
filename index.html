@@ -48,12 +48,18 @@
         }
 
         /* Custom styles for portfolio section */
+        .portfolio-grid-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 4rem;
+        }
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             width: 100%;
-            margin-top: 4rem;
+            justify-content: center; /* Center grid items */
         }
         .portfolio-item {
             background-color: #1a1a1a;
@@ -224,63 +230,73 @@
                         <p class="paragraph-big">Check out some of our recent work.</p>
                     </div>
                 </div>
-                <div class="portfolio-grid">
-                    <a href="https://cottluke1.github.io/spark1/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark1/" alt="Preview of Demo 1" class="portfolio-image">
-                        <div class="portfolio-content">
-                            <h3>Demo 1</h3>
-                            <p>A preview of a custom-designed website.</p>
-                        </div>
-                    </a>
-                    <a href="https://cottluke1.github.io/spark2/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark2/" alt="Preview of Demo 2" class="portfolio-image">
-                        <div class="portfolio-content">
-                            <h3>Demo 2</h3>
-                            <p>A preview of a custom-designed website.</p>
-                        </div>
-                    </a>
-                    <a href="https://cottluke1.github.io/spark3/" target="_blank" class="portfolio-item">
-                         <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark3/" alt="Preview of Demo 3" class="portfolio-image">
-                        <div class="portfolio-content">
-                            <h3>Demo 3</h3>
-                            <p>A preview of a custom-designed website.</p>
-                        </div>
-                    </a>
-                    <a href="https://cottluke1.github.io/spark4/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark4/" alt="Preview of Demo 4" class="portfolio-image">
-                        <div class="portfolio-content">
-                           <h3>Demo 4</h3>
-                           <p>A preview of a custom-designed website.</p>
-                        </div>
-                   </a>
-                   <a href="https://cottluke1.github.io/spark5/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark5/" alt="Preview of Demo 5" class="portfolio-image">
-                        <div class="portfolio-content">
-                           <h3>Demo 5</h3>
-                           <p>A preview of a custom-designed website.</p>
-                        </div>
-                   </a>
-                   <a href="https://cottluke1.github.io/spark6/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark6/" alt="Preview of Demo 6" class="portfolio-image">
-                        <div class="portfolio-content">
-                           <h3>Demo 6</h3>
-                           <p>A preview of a custom-designed website.</p>
-                        </div>
-                   </a>
-                   <a href="https://cottluke1.github.io/spark7/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark7/" alt="Preview of Demo 7" class="portfolio-image">
-                        <div class="portfolio-content">
-                           <h3>Demo 7</h3>
-                           <p>A preview of a custom-designed website.</p>
-                        </div>
-                   </a>
-                   <a href="https://cottluke1.github.io/spark8/" target="_blank" class="portfolio-item">
-                        <img src="https://image.thum.io/get/width/600/crop/440/https://cottluke1.github.io/spark8/" alt="Preview of Demo 8" class="portfolio-image">
-                        <div class="portfolio-content">
-                           <h3>Demo 8</h3>
-                           <p>A preview of a custom-designed website.</p>
-                        </div>
-                   </a>
+                <div class="portfolio-grid-wrapper">
+                    <div class="portfolio-grid">
+                        <a href="https://cottluke1.github.io/spark1/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 1" class="portfolio-image">
+                            <div class="portfolio-content">
+                                <h3>Demo 1</h3>
+                                <p>A preview of a custom-designed website.</p>
+                            </div>
+                        </a>
+                        <a href="https://cottluke1.github.io/spark2/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 2" class="portfolio-image">
+                            <div class="portfolio-content">
+                                <h3>Demo 2</h3>
+                                <p>A preview of a custom-designed website.</p>
+                            </div>
+                        </a>
+                        <a href="https://cottluke1.github.io/spark3/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                             <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 3" class="portfolio-image">
+                            <div class="portfolio-content">
+                                <h3>Demo 3</h3>
+                                <p>A preview of a custom-designed website.</p>
+                            </div>
+                        </a>
+                        <a href="https://cottluke1.github.io/spark4/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 4" class="portfolio-image">
+                            <div class="portfolio-content">
+                               <h3>Demo 4</h3>
+                               <p>A preview of a custom-designed website.</p>
+                            </div>
+                       </a>
+                       <a href="https://cottluke1.github.io/spark5/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 5" class="portfolio-image">
+                            <div class="portfolio-content">
+                               <h3>Demo 5</h3>
+                               <p>A preview of a custom-designed website.</p>
+                            </div>
+                       </a>
+                       <a href="https://cottluke1.github.io/spark6/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 6" class="portfolio-image">
+                            <div class="portfolio-content">
+                               <h3>Demo 6</h3>
+                               <p>A preview of a custom-designed website.</p>
+                            </div>
+                       </a>
+                       <a href="https://cottluke1.github.io/spark7/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 7" class="portfolio-image">
+                            <div class="portfolio-content">
+                               <h3>Demo 7</h3>
+                               <p>A preview of a custom-designed website.</p>
+                            </div>
+                       </a>
+                       <a href="https://cottluke1.github.io/spark8/" target="_blank" class="portfolio-item">
+                            <!-- TODO: Replace with your image path -->
+                            <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Add+Image" alt="Demo 8" class="portfolio-image">
+                            <div class="portfolio-content">
+                               <h3>Demo 8</h3>
+                               <p>A preview of a custom-designed website.</p>
+                            </div>
+                       </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -318,6 +334,7 @@
                     <p class="paragraph-big max-width">Message us for all inquiries, and we'll get back to you as quickly as possible.</p>
                 </div>
                 <div class="half-block">
+                    <!-- The w-form class has been removed to prevent Webflow's script from causing an error -->
                     <div class="form-block">
                         <form id="contact-form" name="contact-form" method="get" class="form" aria-label="Contact Form">
                             <label for="Your-name" class="label">Name</label>
@@ -328,6 +345,7 @@
                             <textarea placeholder="Enter your message" maxlength="5000" id="Message" name="Message" data-name="Message" class="text-field inverse large w-input"></textarea>
                             <input type="submit" value="Submit" data-wait="Please wait..." class="button wide margin-top w-button">
                         </form>
+                        <!-- These messages will no longer be triggered by the Webflow script -->
                         <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form 2 success">
                             <div class="paragraph-small">Thank you! Your submission has been received!</div>
                         </div>

@@ -28,23 +28,29 @@
 
         /* Live coding background styles */
         #coding-background {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Puts it behind everything */
-            background-color: #0d1117; /* Dark background similar to a code editor */
+            z-index: -1;
+            background-color: #0d1117;
             overflow: hidden;
-            opacity: 0.15; /* Subtle effect */
+            opacity: 0.25;
         }
         #code-output {
             font-family: 'Courier New', Courier, monospace;
             color: #58a6ff;
-            font-size: 14px;
-            white-space: pre; /* Use pre to respect spaces and newlines from the string */
+            font-size: 18px;
+            white-space: pre;
             margin: 1rem;
             line-height: 1.5;
+        }
+        .hero-section-wrapper {
+            position: relative;
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Custom styles for portfolio section */
@@ -59,14 +65,14 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             width: 100%;
-            justify-content: center; /* Center grid items */
+            justify-content: center;
         }
         .portfolio-item {
             background-color: #1a1a1a;
             border-radius: 16px;
             overflow: hidden;
             transition: transform 0.3s ease;
-            text-decoration: none; /* Removes underline from link */
+            text-decoration: none;
         }
         .portfolio-item:hover {
             transform: translateY(-10px);
@@ -90,10 +96,71 @@
             font-size: 0.9rem;
         }
         
+        /* Custom styles for new process section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+        .process-step {
+            margin-bottom: 5rem;
+            opacity: 0.3;
+            transition: opacity 0.4s ease;
+        }
+        .process-step.is-active {
+            opacity: 1;
+        }
+        .process-step-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .process-step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #85efac;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #85efac;
+            flex-shrink: 0;
+            opacity: 0;
+        }
+        .process-step h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .process-right-column {
+            position: sticky;
+            top: 150px;
+            height: 400px;
+        }
+        .code-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 1.5rem;
+            height: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .code-card pre {
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ccc;
+            font-size: 14px;
+            margin: 0;
+        }
+
         /* Custom styles for new pricing section */
         .pricing-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             align-items: stretch;
             width: 100%;
@@ -107,6 +174,15 @@
             display: flex;
             flex-direction: column;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .pricing-card.professional {
+            border-color: #85efac;
+            box-shadow: 0 0 25px rgba(133, 239, 172, 0.2);
         }
         
         .pricing-card h3 {
@@ -115,24 +191,23 @@
             margin: 0;
         }
         .pricing-card .price {
-            font-size: 2.5rem; /* Adjusted for longer text */
+            font-size: 2.2rem;
             font-weight: bold;
             color: #85efac;
-            margin: 1rem 0;
+            margin: 1rem 0 0.5rem;
         }
         .pricing-card .price-subtitle {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #aaa;
-            margin-top: -0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .pricing-card .features-list {
             text-align: left;
             margin: 0 auto 2rem;
+            padding-left: 1.5rem;
             color: #ccc;
-            list-style-position: inside;
-            padding-left: 0;
+            list-style-type: '✓  ';
             flex-grow: 1;
         }
         .pricing-card .features-list li {
@@ -140,9 +215,50 @@
         }
         .pricing-card .button {
             width: 100%;
-            margin-top: auto; /* Pushes button to the bottom */
+            margin-top: auto;
         }
-        
+        .custom-plan-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .custom-plan-cta a {
+            color: #85efac;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .custom-plan-cta a:hover {
+            border-color: #85efac;
+        }
+
+        /* Modern Contact Form Styles */
+        .contact-section {
+            background-color: #000;
+        }
+        .contact-form .text-field {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+        }
+        .contact-form .text-field::placeholder {
+            color: #888;
+        }
+        .contact-form .text-field:focus {
+            border-color: #85efac;
+            box-shadow: 0 0 10px rgba(133, 239, 172, 0.3);
+        }
+
+        @media (max-width: 991px) {
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-right-column {
+                display: none; /* Hide code card on smaller screens for simplicity */
+            }
+        }
         @media (max-width: 767px) {
             .pricing-grid {
                 grid-template-columns: 1fr;
@@ -151,10 +267,6 @@
     </style>
 </head>
 <body>
-    <div id="coding-background">
-        <pre id="code-output"></pre>
-    </div>
-
     <div data-animation="default" class="navbar w-nav" data-easing2="ease-in-quart" data-easing="ease-out-quart" data-collapse="medium" data-w-id="b81427ad-7a6f-ef7c-61ac-ed954329f2b6" role="banner" data-duration="400">
         <div class="navbar-container">
             <a href="#home" class="brand w-nav-brand">
@@ -163,11 +275,12 @@
             <nav role="navigation" class="nav-menu w-nav-menu">
                 <a href="#mission" class="nav-link w-inline-block"><div>Our Mission</div></a>
                 <a href="#services" class="nav-link w-inline-block"><div>Services</div></a>
+                <a href="#process" class="nav-link w-inline-block"><div>Our Process</div></a>
                 <a href="#portfolio" class="nav-link w-inline-block"><div>Demo Sites</div></a>
                 <a href="#pricing" class="nav-link w-inline-block"><div>Pricing</div></a>
                 <a href="#contact" class="nav-link w-inline-block"><div>Contact</div></a>
             </nav>
-            <a href="#contact" class="button inverse w-button">Get a Quote</a>
+            <a href="#contact" class="button inverse w-button">Contact</a>
             <div data-w-id="b81427ad-7a6f-ef7c-61ac-ed954329f2c0" class="burger-wrapper w-nav-button" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
                 <div class="burger-line top"></div>
                 <div class="burger-line"></div>
@@ -177,21 +290,23 @@
     </div>
 
     <div id="luxy" class="scroll-wrapper">
-        <div data-w-id="0bc9c9ae-ff7d-2a81-0901-3531fc4eac4e" class="section wf-section">
-            <div id="home" class="id-navigator thin"></div>
-            <div data-w-id="7dc6564e-b63e-7d03-70d5-7b2511aaabbf" class="wrapper">
-                <div class="block hero">
-                    <div class="center-items">
-                        <div letters-slide-up="" text-split="" class="heading-jumbo xlarge">
-                            Building websites for the future
+        <div class="hero-section-wrapper">
+            <div id="coding-background">
+                <pre id="code-output"></pre>
+            </div>
+            <div data-w-id="0bc9c9ae-ff7d-2a81-0901-3531fc4eac4e" class="section wf-section" style="flex-grow: 1; display: flex; flex-direction: column;">
+                <div id="home" class="id-navigator thin"></div>
+                <div data-w-id="7dc6564e-b63e-7d03-70d5-7b2511aaabbf" class="wrapper" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="block hero">
+                        <div class="center-items">
+                            <div letters-slide-up="" text-split="" class="heading-jumbo xlarge">
+                                Building websites for the future
+                            </div>
+                            <p words-fade-in="" text-split="" class="paragraph-big">
+                                We create beautiful, responsive, and blazing-fast websites.
+                            </p>
                         </div>
-                        <p words-fade-in="" text-split="" class="paragraph-big">
-                            We create beautiful, responsive, and blazing-fast websites.
-                        </p>
                     </div>
-                </div>
-                <div class="hero-image-wrapper">
-                    <img src="https://placehold.co/2000x1200/111111/333333?text=Your+Future+Website" loading="eager" data-w-id="1f835257-e8f1-bb68-c813-ad3439d9a00d" alt="A modern website design" class="hero-image">
                 </div>
             </div>
         </div>
@@ -234,70 +349,112 @@
                 </div>
             </div>
         </div>
+
+        <div id="process" class="section inverse wf-section">
+            <div class="wrapper">
+                <div class="block">
+                    <div class="center-items">
+                        <div class="heading-jumbo small">Our Process</div>
+                        <p class="paragraph-big">A simple path from idea to launch.</p>
+                    </div>
+                </div>
+                <div class="process-grid">
+                    <div class="process-left-column">
+                        <div class="process-step" id="step-1">
+                            <div class="process-step-header">
+                                <div class="process-step-number">1</div>
+                                <h2>Customize</h2>
+                            </div>
+                            <p class="paragraph-light">Choose one of our demo sites as a starting point, or work with us to create a completely custom design that fits your unique vision.</p>
+                        </div>
+                        <div class="process-step" id="step-2">
+                            <div class="process-step-header">
+                                <div class="process-step-number">2</div>
+                                <h2>Create</h2>
+                            </div>
+                            <p class="paragraph-light">We get to work building your website, which typically takes 1-2 days. You'll get a private link to review our progress and request changes.</p>
+                        </div>
+                        <div class="process-step" id="step-3">
+                            <div class="process-step-header">
+                                <div class="process-step-number">3</div>
+                                <h2>Order</h2>
+                            </div>
+                            <p class="paragraph-light">Once you are 100% happy with your new site, we'll send you a secure Stripe payment link to finalize your order and launch your website.</p>
+                        </div>
+                    </div>
+                    <div class="process-right-column">
+                        <div class="code-card">
+                            <pre id="code-card-content"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div id="portfolio" class="section inverse wf-section">
              <div class="wrapper">
                 <div class="block">
                     <div class="center-items">
                         <div class="heading-jumbo small">Demo Sites</div>
+                        <p class="paragraph-big">Check out some of our recent work.</p>
                     </div>
                 </div>
                 <div class="portfolio-grid-wrapper">
                     <div class="portfolio-grid">
                         <a href="https://cottluke1.github.io/spark1/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
                             <img src="https://github.com/cottluke1/images/blob/main/Demo1.png?raw=true" alt="Demo 1" class="portfolio-image">
                             <div class="portfolio-content">
                                 <h3>Demo 1</h3>
+                                <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark2/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo8.png?raw=true" alt="Demo 2" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo2.png?raw=true" alt="Demo 2" class="portfolio-image">
                             <div class="portfolio-content">
                                 <h3>Demo 2</h3>
+                                <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark3/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                             <img src="https://github.com/cottluke1/images/blob/main/demo7.png?raw=true" alt="Demo 3" class="portfolio-image">
+                             <img src="https://github.com/cottluke1/images/blob/main/demo3.png?raw=true" alt="Demo 3" class="portfolio-image">
                             <div class="portfolio-content">
                                 <h3>Demo 3</h3>
+                                <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark4/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo6.png?raw=true" alt="Demo 4" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo4.png?raw=true" alt="Demo 4" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 4</h3>
+                               <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark5/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
                             <img src="https://github.com/cottluke1/images/blob/main/demo5.png?raw=true" alt="Demo 5" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 5</h3>
+                               <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark6/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo4.png?raw=true" alt="Demo 6" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo6.png?raw=true" alt="Demo 6" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 6</h3>
+                               <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark7/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo3.png?raw=true" alt="Demo 7" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo7.png?raw=true" alt="Demo 7" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 7</h3>
+                               <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark8/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo2.png?raw=true" alt="Demo 8" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo8.png?raw=true" alt="Demo 8" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 8</h3>
+                               <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                     </div>
@@ -309,50 +466,68 @@
             <div class="wrapper">
                 <div class="block">
                     <div class="center-items">
-                        <div class="heading-jumbo small">Clear & Simple Pricing</div>
-                        <p class="paragraph-big">Choose the plan that's right for you.</p>
+                        <div class="heading-jumbo small">Find Your Perfect Plan</div>
+                        <p class="paragraph-big">Transparent pricing for every need.</p>
                     </div>
                 </div>
                 <div class="pricing-grid">
+                    <!-- Basic Plan -->
                     <div class="pricing-card">
-                        <h3>Starter Site</h3>
+                        <h3>Basic</h3>
                         <div class="price">$199</div>
-\                        <ul class="features-list">
-                            <li>✓ Fully Custom Design</li>
-                            <li>✓ Mobile-Friendly Layout</li>
-                            <li>✓ SEO-Ready Foundation</li>
-                            <li>✓ Secure Hosting Included</li>
-                            <li>✓ Domain: <strong>spark.github.io/yourname</strong></li>
+                        <div class="price-subtitle">One-Time Payment</div>
+                        <ul class="features-list">
+                            <li>Fully Custom Design</li>
+                            <li>Friendly Mobile Layout</li>
+                            <li>Secure Hosting</li>
+                            <li>Domain: spark.github.io/yourname</li>
                         </ul>
-                        <a href="#contact" class="button inverse w-button">Choose Plan</a>
+                        <a href="#contact" class="button inverse w-button">Contact</a>
                     </div>
+                    <!-- Advanced Plan -->
                     <div class="pricing-card">
-                        <h3>Pro Business Site</h3>
-                        <div class="price">$499 + $99/mo</div>
-                         <ul class="features-list">
-                            <li>✓ Everything in Starter, plus:</li>
-                            <li>✓ Custom Domain: <strong>yourname.com</strong></li>
-                            <li>✓ Dynamic Content Management</li>
-                            <li>✓ Priority Support & Maintenance</li>
-                            <li>✓ Monthly Performance Analytics</li>
+                        <h3>Advanced</h3>
+                        <div class="price">$199 + $99/mo</div>
+                        <div class="price-subtitle">Upfront + Subscription</div>
+                        <ul class="features-list">
+                            <li>Fully Custom Design</li>
+                            <li>Friendly Mobile Layout</li>
+                            <li>Secure Hosting</li>
+                            <li>Live Updates & Listings</li>
                         </ul>
-                        <a href="#contact" class="button inverse w-button">Choose Plan</a>
+                        <a href="#contact" class="button inverse w-button">Contact</a>
                     </div>
+                    <!-- Professional Plan -->
+                    <div class="pricing-card professional">
+                        <h3>Professional</h3>
+                        <div class="price">$499 + $99/mo</div>
+                        <div class="price-subtitle">Upfront + Subscription</div>
+                        <ul class="features-list">
+                            <li>Fully Custom Design</li>
+                            <li>Friendly Mobile Layout</li>
+                            <li>Secure Hosting</li>
+                            <li>Domain: yourname.com</li>
+                            <li>Live Listings & Updates</li>
+                        </ul>
+                        <a href="#contact" class="button inverse w-button">Contact</a>
+                    </div>
+                </div>
+                <div class="custom-plan-cta">
+                    <p class="paragraph-big">Don't see a plan you like? <strong><a href="#contact">Let's talk.</a></strong></p>
                 </div>
             </div>
         </div>
 
-        <div class="section inverse-color-only padding-bottom wf-section">
+        <div class="section inverse padding-bottom wf-section contact-section">
             <div id="contact" class="id-navigator"></div>
-            <div data-w-id="9d44ecdf-76fe-2947-add4-79c9ee4c6174" class="wrapper flex viewer blue">
+            <div data-w-id="9d44ecdf-76fe-2947-add4-79c9ee4c6174" class="wrapper flex">
                 <div class="half-block">
                     <div class="heading-jumbo small left">Contact Us</div>
-                    <p class="paragraph-big max-width">Message us for all inquiries, and we'll get back to you as quickly as possible.</p>
+                    <p class="paragraph-big max-width">To order, please contact us through the form or email us directly at <strong>order@spark.com</strong>. We'll get back to you as quickly as possible.</p>
                 </div>
                 <div class="half-block">
-                    <!-- The w-form class has been removed to prevent Webflow's script from causing an error -->
                     <div class="form-block">
-                        <form id="contact-form" name="contact-form" method="get" class="form" aria-label="Contact Form">
+                        <form id="contact-form" name="contact-form" method="get" class="form contact-form" aria-label="Contact Form">
                             <label for="Your-name" class="label">Name</label>
                             <input type="text" class="text-field inverse margin-bottom w-input" maxlength="256" name="Your-name" data-name="Your name" placeholder="Enter your name" id="Your-name">
                             <label for="E-mail" class="label">Email Address</label>
@@ -361,7 +536,6 @@
                             <textarea placeholder="Enter your message" maxlength="5000" id="Message" name="Message" data-name="Message" class="text-field inverse large w-input"></textarea>
                             <input type="submit" value="Submit" data-wait="Please wait..." class="button wide margin-top w-button">
                         </form>
-                        <!-- These messages will no longer be triggered by the Webflow script -->
                         <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form 2 success">
                             <div class="paragraph-small">Thank you! Your submission has been received!</div>
                         </div>
@@ -382,6 +556,7 @@
                     <div class="footer-links">
                         <a href="#mission" class="footer-link w-inline-block"><div>Our Mission</div></a>
                         <a href="#services" class="footer-link w-inline-block"><div>Services</div></a>
+                        <a href="#process" class="footer-link w-inline-block"><div>Our Process</div></a>
                         <a href="#portfolio" class="footer-link w-inline-block"><div>Demo Sites</div></a>
                         <a href="#pricing" class="footer-link w-inline-block"><div>Pricing</div></a>
                         <a href="#contact" class="footer-link w-inline-block"><div>Contact</div></a>
@@ -450,77 +625,106 @@
                 createScrollTrigger(el, tl);
             });
 
-            // Animate letters fading in
-            document.querySelectorAll("[letters-fade-in]").forEach(el => {
-                let tl = gsap.timeline({ paused: true });
-                tl.from(el.querySelectorAll(".char"), { opacity: 0, duration: 0.4, ease: "power1.out", stagger: { amount: 0.4 } });
-                createScrollTrigger(el, tl);
-            });
-
             // Avoid flash of unstyled content
             gsap.set("[text-split]", { opacity: 1 });
 
             // --- Live Coding Background Script ---
-            const codeSnippets = [
-`function initializeApp() {
-    console.log("Initializing Spark...");
-    loadServices();
-    setupEventListeners();
-}`,
-`const sparkButton = document.querySelector('.spark-btn');
-sparkButton.addEventListener('click', () => {
-    createMagic();
-});`,
-`.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #85efac, #58a6ff);
-}`,
-`// Fetching data from an API
-async function getData(url) {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Fetch error:', error);
-    }
-}`
-            ];
-
-            let currentSnippetIndex = 0;
-            let currentCharIndex = 0;
             const codeOutput = document.getElementById('code-output');
-            let timeoutId;
-
-            function typeCode() {
-                if (!codeOutput) return; // Exit if element not found
-
-                if (currentSnippetIndex >= codeSnippets.length) {
-                    currentSnippetIndex = 0; // Loop back to the start
+            if (codeOutput) {
+                const codeSnippets = [
+                    `function initializeApp() {\n    console.log("Initializing Spark...");\n    loadServices();\n    setupEventListeners();\n}`,
+                    `const sparkButton = document.querySelector('.spark-btn');\nsparkButton.addEventListener('click', () => {\n    createMagic();\n});`,
+                    `.hero-section {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n    background: linear-gradient(45deg, #85efac, #58a6ff);\n}`,
+                    `// Fetching data from an API\nasync function getData(url) {\n    try {\n        const response = await fetch(url);\n        const data = await response.json();\n        return data;\n    } catch (error) {\n        console.error('Fetch error:', error);\n    }\n}`
+                ];
+                let currentSnippetIndex = 0;
+                let currentCharIndex = 0;
+                let timeoutId;
+                function typeCode() {
+                    if (currentSnippetIndex >= codeSnippets.length) {
+                        currentSnippetIndex = 0; 
+                    }
+                    let currentSnippet = codeSnippets[currentSnippetIndex];
+                    if (currentCharIndex < currentSnippet.length) {
+                        codeOutput.textContent += currentSnippet.charAt(currentCharIndex);
+                        currentCharIndex++;
+                        timeoutId = setTimeout(typeCode, 10); // Faster typing speed
+                    } else {
+                        timeoutId = setTimeout(() => {
+                            currentCharIndex = 0;
+                            currentSnippetIndex++;
+                            codeOutput.textContent = ''; 
+                            typeCode();
+                        }, 2000);
+                    }
                 }
-
-                let currentSnippet = codeSnippets[currentSnippetIndex];
-
-                if (currentCharIndex < currentSnippet.length) {
-                    codeOutput.textContent += currentSnippet.charAt(currentCharIndex);
-                    currentCharIndex++;
-                    timeoutId = setTimeout(typeCode, 40); // Adjust typing speed here
-                } else {
-                    // Wait a bit then clear and move to the next snippet
-                    timeoutId = setTimeout(() => {
-                        currentCharIndex = 0;
-                        currentSnippetIndex++;
-                        codeOutput.textContent = ''; // Clear for the next snippet
-                        typeCode();
-                    }, 2500); // Wait 2.5 seconds before typing the next snippet
-                }
+                typeCode();
             }
 
-            // Start the animation
-            typeCode();
+            // --- Process Section Animation ---
+            const codeCardContent = document.getElementById('code-card-content');
+            const processSteps = document.querySelectorAll('.process-step');
+            const stepCode = [
+                `<div class="card-layout">
+  <img src="..." alt="Hero Image">
+  <div class="content">
+    <h2>Your Brand</h2>
+    <p>Choose a template or start fresh.</p>
+  </div>
+</div>`,
+                `// Building responsive components
+function createComponent(props) {
+  const { type, children } = props;
+  const element = document.createElement(type);
+  element.append(...children);
+  return element;
+}`,
+                `<form action="/charge" method="post" id="payment-form">
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element"></div>
+    <div id="card-errors" role="alert"></div>
+  </div>
+  <button>Submit Payment</button>
+</form>`
+            ];
+
+            if(codeCardContent) {
+                codeCardContent.textContent = stepCode[0]; // Set initial content
+            }
+            
+            gsap.utils.toArray('.process-step-number').forEach(number => {
+                gsap.from(number, {
+                    scrollTrigger: {
+                        trigger: number,
+                        start: 'top 80%',
+                    },
+                    opacity: 0,
+                    scale: 0.5,
+                    duration: 0.6,
+                    ease: 'power1.out'
+                });
+            });
+
+            processSteps.forEach((step, index) => {
+                ScrollTrigger.create({
+                    trigger: step,
+                    start: 'top center',
+                    end: 'bottom center',
+                    onToggle: self => {
+                        if(self.isActive) {
+                            step.classList.add('is-active');
+                            if(codeCardContent) {
+                                codeCardContent.textContent = stepCode[index];
+                            }
+                        } else {
+                            step.classList.remove('is-active');
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>

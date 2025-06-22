@@ -115,19 +115,32 @@
             margin: 0;
         }
         .pricing-card .price {
-            font-size: 3rem;
+            font-size: 2.5rem; /* Adjusted for longer text */
             font-weight: bold;
             color: #85efac;
             margin: 1rem 0;
         }
-        
-        .pricing-card p {
+        .pricing-card .price-subtitle {
+            font-size: 1rem;
             color: #aaa;
-            margin-bottom: 2rem;
+            margin-top: -0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-card .features-list {
+            text-align: left;
+            margin: 0 auto 2rem;
+            color: #ccc;
+            list-style-position: inside;
+            padding-left: 0;
             flex-grow: 1;
+        }
+        .pricing-card .features-list li {
+            margin-bottom: 0.75rem;
         }
         .pricing-card .button {
             width: 100%;
+            margin-top: auto; /* Pushes button to the bottom */
         }
         
         @media (max-width: 767px) {
@@ -233,7 +246,6 @@
                 <div class="portfolio-grid-wrapper">
                     <div class="portfolio-grid">
                         <a href="https://cottluke1.github.io/spark1/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
                             <img src="https://github.com/cottluke1/images/blob/main/Demo1.png?raw=true" alt="Demo 1" class="portfolio-image">
                             <div class="portfolio-content">
                                 <h3>Demo 1</h3>
@@ -241,31 +253,27 @@
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark2/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo8.png?raw=true" alt="Demo 2" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo2.png?raw=true" alt="Demo 2" class="portfolio-image">
                             <div class="portfolio-content">
                                 <h3>Demo 2</h3>
                                 <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark3/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                             <img src="https://github.com/cottluke1/images/blob/main/demo7.png?raw=true" alt="Demo 3" class="portfolio-image">
+                             <img src="https://github.com/cottluke1/images/blob/main/demo3.png?raw=true" alt="Demo 3" class="portfolio-image">
                             <div class="portfolio-content">
                                 <h3>Demo 3</h3>
                                 <p>A preview of a custom-designed website.</p>
                             </div>
                         </a>
                         <a href="https://cottluke1.github.io/spark4/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo6.png?raw=true" alt="Demo 4" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo4.png?raw=true" alt="Demo 4" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 4</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark5/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
                             <img src="https://github.com/cottluke1/images/blob/main/demo5.png?raw=true" alt="Demo 5" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 5</h3>
@@ -273,24 +281,21 @@
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark6/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo4.png?raw=true" alt="Demo 6" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo6.png?raw=true" alt="Demo 6" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 6</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark7/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo3.png?raw=true" alt="Demo 7" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo7.png?raw=true" alt="Demo 7" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 7</h3>
                                <p>A preview of a custom-designed website.</p>
                             </div>
                        </a>
                        <a href="https://cottluke1.github.io/spark8/" target="_blank" class="portfolio-item">
-                            <!-- TODO: Replace with your permanent image URL -->
-                            <img src="https://github.com/cottluke1/images/blob/main/demo2.png?raw=true" alt="Demo 8" class="portfolio-image">
+                            <img src="https://github.com/cottluke1/images/blob/main/demo8.png?raw=true" alt="Demo 8" class="portfolio-image">
                             <div class="portfolio-content">
                                <h3>Demo 8</h3>
                                <p>A preview of a custom-designed website.</p>
@@ -313,13 +318,27 @@
                     <div class="pricing-card">
                         <h3>Starter Site</h3>
                         <div class="price">$199</div>
-                        <p>Perfect for personal portfolios and simple projects. Your site will be hosted at a domain like <strong>spark.github.io/yourname</strong>.</p>
+                        <div class="price-subtitle">One-Time Payment</div>
+                        <ul class="features-list">
+                            <li>✓ Fully Custom Design</li>
+                            <li>✓ Mobile-Friendly Layout</li>
+                            <li>✓ SEO-Ready Foundation</li>
+                            <li>✓ Secure Hosting Included</li>
+                            <li>✓ Domain: <strong>spark.github.io/yourname</strong></li>
+                        </ul>
                         <a href="#contact" class="button inverse w-button">Choose Plan</a>
                     </div>
                     <div class="pricing-card">
-                        <h3>Custom Site</h3>
-                        <div class="price">$249 - $599</div>
-                        <p>Ideal for businesses and professionals who need a custom domain like <strong>yourname.com</strong>. The price varies based on complexity and features.</p>
+                        <h3>Pro Business Site</h3>
+                        <div class="price">$499 + $99/mo</div>
+                        <div class="price-subtitle">Upfront Cost + Monthly Subscription</div>
+                         <ul class="features-list">
+                            <li>✓ Everything in Starter, plus:</li>
+                            <li>✓ Custom Domain: <strong>yourname.com</strong></li>
+                            <li>✓ Dynamic Content Management</li>
+                            <li>✓ Priority Support & Maintenance</li>
+                            <li>✓ Monthly Performance Analytics</li>
+                        </ul>
                         <a href="#contact" class="button inverse w-button">Choose Plan</a>
                     </div>
                 </div>

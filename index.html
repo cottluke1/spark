@@ -60,6 +60,7 @@
             border-radius: 16px;
             overflow: hidden;
             transition: transform 0.3s ease;
+            text-decoration: none; /* Removes underline from link */
         }
         .portfolio-item:hover {
             transform: translateY(-10px);
@@ -166,7 +167,7 @@
                             Building websites for the future
                         </div>
                         <p words-fade-in="" text-split="" class="paragraph-big">
-                           We create beautiful, responsive, and blazing-fast websites.
+                            We create beautiful, responsive, and blazing-fast websites.
                         </p>
                     </div>
                 </div>
@@ -224,29 +225,63 @@
                     </div>
                 </div>
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Modern+Mansion" alt="A modern mansion" class="portfolio-image" >
+                    <a href="https://cottluke1.github.io/spark1/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+1" alt="Demo Site 1" class="portfolio-image">
                         <div class="portfolio-content">
                             <h3>Luxury Real Estate</h3>
                             <p>A sleek and professional website for a high-end realtor.</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Lakeside+Villa" alt="A lakeside villa" class="portfolio-image">
+                    </a>
+                    <a href="https://cottluke1.github.io/spark2/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+2" alt="Demo Site 2" class="portfolio-image">
                         <div class="portfolio-content">
                             <h3>Vacation Rentals</h3>
                             <p>A beautiful booking site for a lakeside vacation property.</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                         <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Classic+Estate" alt="A classic estate" class="portfolio-image">
+                    </a>
+                    <a href="https://cottluke1.github.io/spark3/" target="_blank" class="portfolio-item">
+                         <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+3" alt="Demo Site 3" class="portfolio-image">
                         <div class="portfolio-content">
                             <h3>Architectural Firm</h3>
                             <p>An elegant portfolio showcasing a classic architectural style.</p>
                         </div>
-                    </div>
+                    </a>
+                    <a href="https://cottluke1.github.io/spark4/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+4" alt="Demo Site 4" class="portfolio-image">
+                        <div class="portfolio-content">
+                           <h3>Business Consulting</h3>
+                           <p>A modern and clean business consulting theme.</p>
+                        </div>
+                   </a>
+                   <a href="https://cottluke1.github.io/spark5/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+5" alt="Demo Site 5" class="portfolio-image">
+                        <div class="portfolio-content">
+                           <h3>Restaurant & Cafe</h3>
+                           <p>A delicious-looking theme for a local eatery.</p>
+                        </div>
+                   </a>
+                   <a href="https://cottluke1.github.io/spark6/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+6" alt="Demo Site 6" class="portfolio-image">
+                        <div class="portfolio-content">
+                           <h3>Personal Portfolio</h3>
+                           <p>A creative layout to showcase personal projects and skills.</p>
+                        </div>
+                   </a>
+                   <a href="https://cottluke1.github.io/spark7/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+7" alt="Demo Site 7" class="portfolio-image">
+                        <div class="portfolio-content">
+                           <h3>Fitness & Gym</h3>
+                           <p>An energetic and motivating theme for a fitness center.</p>
+                        </div>
+                   </a>
+                   <a href="https://cottluke1.github.io/spark8/" target="_blank" class="portfolio-item">
+                        <img src="https://placehold.co/600x440/1a1a1a/ffffff?text=Demo+Site+8" alt="Demo Site 8" class="portfolio-image">
+                        <div class="portfolio-content">
+                           <h3>E-Commerce Store</h3>
+                           <p>A minimal and stylish template for online retail.</p>
+                        </div>
+                   </a>
                 </div>
-                 <a href="#contact" class="button inverse margin-top w-button">View More</a>
             </div>
         </div>
 
@@ -283,7 +318,6 @@
                     <p class="paragraph-big max-width">Message us for all inquiries, and we'll get back to you as quickly as possible.</p>
                 </div>
                 <div class="half-block">
-                    <!-- The w-form class has been removed to prevent Webflow's script from causing an error -->
                     <div class="form-block">
                         <form id="contact-form" name="contact-form" method="get" class="form" aria-label="Contact Form">
                             <label for="Your-name" class="label">Name</label>
@@ -294,7 +328,6 @@
                             <textarea placeholder="Enter your message" maxlength="5000" id="Message" name="Message" data-name="Message" class="text-field inverse large w-input"></textarea>
                             <input type="submit" value="Submit" data-wait="Please wait..." class="button wide margin-top w-button">
                         </form>
-                        <!-- These messages will no longer be triggered by the Webflow script -->
                         <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form 2 success">
                             <div class="paragraph-small">Thank you! Your submission has been received!</div>
                         </div>

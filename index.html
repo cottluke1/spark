@@ -251,7 +251,7 @@
                 <div class="block hero">
                     <div class="center-items">
                         <div letters-slide-up="" text-split="" class="heading-jumbo xlarge">
-                            The Future of Website Building.
+                            The Future of Website Building
                         </div>
                         <p words-fade-in="" text-split="" class="paragraph-big">
                             We create beautiful, responsive, and blazing-fast websites.
@@ -483,7 +483,6 @@
                 <div class="block flex vertical">
                     <div class="half-block flex center">
                         <p class="paragraph-xsmall">© Copyright 2025</p>
-                        <!-- === NEW LINK ADDED HERE === -->
                         <a href="terms.html" class="paragraph-xsmall" style="color: white; text-decoration: underline; margin-left: 1rem;">Terms of Service</a>
                     </div>
                 </div>
@@ -497,8 +496,9 @@
     <script src="https://min30327.github.io/luxy.js/dist/js/luxy.js"></script>
     <script charset="utf-8">
         var isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+        var luxy;
         if (!isMobile) {
-            luxy.init({
+            luxy = luxy.init({
                 wrapper: '#luxy',
                 wrapperSpeed: 0.115,
             });
@@ -558,82 +558,13 @@
             // --- Live Coding Background Script with Syntax Highlighting ---
             const codeSnippets = [
                 // JS Snippet
-                [
-                    { text: 'function ', className: 'code-js-keyword' },
-                    { text: 'initializeApp', className: 'code-js-function' },
-                    { text: '() {\n' },
-                    { text: '    // Initialize the main application\n', className: 'code-comment' },
-                    { text: '    ', className: '' },
-                    { text: 'console', className: 'code-js-variable' },
-                    { text: '.', className: '' },
-                    { text: 'log', className: 'code-js-function' },
-                    { text: '(', className: '' },
-                    { text: "'Initializing Spark...'", className: 'code-js-string' },
-                    { text: ');\n' },
-                    { text: '    ', className: '' },
-                    { text: 'setupEventListeners', className: 'code-js-function' },
-                    { text: '();\n}' }
-                ],
+                [ { text: 'function ', className: 'code-js-keyword' }, { text: 'initializeApp', className: 'code-js-function' }, { text: '() {\n' }, { text: '    // Initialize the main application\n', className: 'code-comment' }, { text: '    ', className: '' }, { text: 'console', className: 'code-js-variable' }, { text: '.', className: '' }, { text: 'log', className: 'code-js-function' }, { text: '(', className: '' }, { text: "'Initializing Spark...'", className: 'code-js-string' }, { text: ');\n' }, { text: '    ', className: '' }, { text: 'setupEventListeners', className: 'code-js-function' }, { text: '();\n}' } ],
                 // CSS Snippet
-                [
-                    { text: '.hero-section ', className: 'code-css-selector' },
-                    { text: '{\n' },
-                    { text: '    display', className: 'code-css-property' },
-                    { text: ': ', className: '' },
-                    { text: 'flex', className: 'code-css-value' },
-                    { text: ';\n' },
-                    { text: '    align-items', className: 'code-css-property' },
-                    { text: ': ', className: '' },
-                    { text: 'center', className: 'code-css-value' },
-                    { text: ';\n' },
-                    { text: '    background', className: 'code-css-property' },
-                    { text: ': ', className: '' },
-                    { text: 'linear-gradient(45deg, #85efac, #58a6ff)', className: 'code-css-value' },
-                    { text: ';\n}' }
-                ],
+                [ { text: '.hero-section ', className: 'code-css-selector' }, { text: '{\n' }, { text: '    display', className: 'code-css-property' }, { text: ': ', className: '' }, { text: 'flex', className: 'code-css-value' }, { text: ';\n' }, { text: '    align-items', className: 'code-css-property' }, { text: ': ', className: '' }, { text: 'center', className: 'code-css-value' }, { text: ';\n' }, { text: '    background', className: 'code-css-property' }, { text: ': ', className: '' }, { text: 'linear-gradient(45deg, #85efac, #58a6ff)', className: 'code-css-value' }, { text: ';\n}' } ],
                 // HTML Snippet
-                [
-                    { text: '<!-- Main hero banner -->\n', className: 'code-comment' },
-                    { text: '<', className: '' },
-                    { text: 'div ', className: 'code-tag' },
-                    { text: 'class=', className: 'code-attr-name' },
-                    { text: '"hero-banner"', className: 'code-attr-value' },
-                    { text: '>\n', className: '' },
-                    { text: '    <', className: '' },
-                    { text: 'h1', className: 'code-tag' },
-                    { text: '>Welcome to Spark</', className: '' },
-                    { text: 'h1', className: 'code-tag' },
-                    { text: '>\n', className: '' },
-                    { text: '</', className: '' },
-                    { text: 'div', className: 'code-tag' },
-                    { text: '>', className: '' }
-                ],
+                [ { text: '<!-- Main hero banner -->\n', className: 'code-comment' }, { text: '<', className: '' }, { text: 'div ', className: 'code-tag' }, { text: 'class=', className: 'code-attr-name' }, { text: '"hero-banner"', className: 'code-attr-value' }, { text: '>\n', className: '' }, { text: '    <', className: '' }, { text: 'h1', className: 'code-tag' }, { text: '>Welcome to Spark</', className: '' }, { text: 'h1', className: 'code-tag' }, { text: '>\n', className: '' }, { text: '</', className: '' }, { text: 'div', className: 'code-tag' }, { text: '>', className: '' } ],
                  // React/JSX Snippet
-                [
-                    { text: 'import ', className: 'code-js-keyword' },
-                    { text: 'React ', className: 'code-js-variable' },
-                    { text: 'from ', className: 'code-js-keyword' },
-                    { text: "'react'", className: 'code-js-string' },
-                    { text: ';\n\n' },
-                    { text: 'const ', className: 'code-js-keyword' },
-                    { text: 'Hero ', className: 'code-js-variable' },
-                    { text: '= () ', className: '' },
-                    { text: '=> ', className: 'code-js-keyword' },
-                    { text: '(\n  <', className: '' },
-                    { text: 'div ', className: 'code-tag' },
-                    { text: 'className=', className: 'code-attr-name' },
-                    { text: '"hero"', className: 'code-attr-value' },
-                    { text: '>\n    <', className: '' },
-                    { text: 'h1', className: 'code-tag' },
-                    { text: '>Spark</', className: '' },
-                    { text: 'h1', className: 'code-tag' },
-                    { text: '>\n  </', className: '' },
-                    { text: 'div', className: 'code-tag' },
-                    { text: '>\n);\n\n' },
-                    { text: 'export default ', className: 'code-js-keyword' },
-                    { text: 'Hero', className: 'code-js-variable' },
-                    { text: ';', className: '' },
-                ]
+                [ { text: 'import ', className: 'code-js-keyword' }, { text: 'React ', className: 'code-js-variable' }, { text: 'from ', className: 'code-js-keyword' }, { text: "'react'", className: 'code-js-string' }, { text: ';\n\n' }, { text: 'const ', className: 'code-js-keyword' }, { text: 'Hero ', className: 'code-js-variable' }, { text: '= () ', className: '' }, { text: '=> ', className: 'code-js-keyword' }, { text: '(\n  <', className: '' }, { text: 'div ', className: 'code-tag' }, { text: 'className=', className: 'code-attr-name' }, { text: '"hero"', className: 'code-attr-value' }, { text: '>\n    <', className: '' }, { text: 'h1', className: 'code-tag' }, { text: '>Spark</', className: '' }, { text: 'h1', className: 'code-tag' }, { text: '>\n  </', className: '' }, { text: 'div', className: 'code-tag' }, { text: '>\n);\n\n' }, { text: 'export default ', className: 'code-js-keyword' }, { text: 'Hero', className: 'code-js-variable' }, { text: ';', className: '' }, ]
             ];
 
             const codeOutput = document.getElementById('code-output');
@@ -683,6 +614,26 @@
             }
 
             typeCode();
+
+            // === NEW SCRIPT TO FIX NAVIGATION ===
+            // This handles anchor links when navigating from another page.
+            const hash = window.location.hash;
+            if (hash) {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    // Give Luxy.js a moment to initialize before scrolling.
+                    setTimeout(() => {
+                        if (window.luxy && typeof window.luxy.scrollTo === 'function') {
+                            // Luxy.js's scrolling function requires the element's top offset.
+                            window.luxy.scrollTo(targetElement.offsetTop);
+                        } else if(targetElement.scrollIntoView) {
+                            // Fallback for mobile or if luxy fails
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 200); // Increased delay slightly for reliability
+                }
+            }
+
         });
     </script>
 </body>

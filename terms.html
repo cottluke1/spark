@@ -71,16 +71,18 @@
              color: #fff;
         }
 
+        /* Overriding the wrapper to make content wider */
+        .section .wrapper {
+            max-width: 90%; /* Using a percentage allows it to be much wider on large screens */
+        }
+
         /* Custom styles for terms content */
         .terms-content-block {
             color: #fff; /* Updated text color to white */
             margin-top: 4rem;
-            max-width: 1140px; /* === WIDENED THE CONTENT BLOCK === */
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
-            padding-left: 1rem; /* Added padding for smaller screens */
-            padding-right: 1rem; /* Added padding for smaller screens */
         }
         .terms-content-block h3 {
             color: #fff;
@@ -104,7 +106,7 @@
     </div>
 
     <!-- The same navbar from the main page -->
-    <!-- === UPDATED NAVBAR LINKS === -->
+    <!-- === UPDATED NAVBAR LINKS TO INCLUDE "index.html" === -->
     <div data-animation="default" class="navbar w-nav" data-easing2="ease-in-quart" data-easing="ease-out-quart" data-collapse="medium" data-w-id="b81427ad-7a6f-ef7c-61ac-ed954329f2b6" role="banner" data-duration="400">
         <div class="navbar-container">
             <a href="index.html#home" class="brand w-nav-brand">
@@ -127,7 +129,6 @@
     </div>
 
     <div id="luxy" class="scroll-wrapper">
-        <!-- === UPDATED: Removed 'inverse' class to allow black background to show === -->
         <div class="section wf-section" style="padding-top: 10rem; padding-bottom: 5rem;">
             <div class="wrapper">
                 <div class="center-items">
